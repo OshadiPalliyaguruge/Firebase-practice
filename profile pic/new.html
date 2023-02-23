@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Collecting Data</title>
+<script src="new.js"></script>
+</head>
+<body>
+<form method='post' enctype="multipart/form-data">
+    <div class="form-row">
+        <div class="form-group col-md-3 txtAlign">
+            <label>Image Name</label>
+        </div>
+        <div class="form-group col-md-8">
+            <input type="text" class="form-control" name="imgName" placeholder="Image Name" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3 txtAlign">
+            <label>Select Image</label>
+        </div>
+        <div class="form-group col-md-8">
+            <input type="file" id="files" name="imgDoc" required class="form-control">
+            <p class="help-block">Only jpeg, jpg, png and tiff can be uploaded</p>
+            <textarea id="urlUP" name="filePath" hidden="hidden"></textarea>
+            <progress value="0" max="100" id="progress" class="progressbar"></progress>
+            <p id="uploading" class="successMsg"></p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+    
+        </div>
+        <div class="form-group col-md-8">
+            <input type="submit" class="btn btn-primary" name="imgUplaod" value="Submit">
+            <img src="" id="profile-img-tag" class="displayImg"/>
+        </div>
+    </div>
+    </form>
+    <div class="col-md-6">
+    <div class="form-row">
+        <div class="form-group col-md-1">
+            <button type="submit" class='btn btn-success btn-sm uploadBtn' id="uploadImg">
+                <i class="fas fa-upload"></i> Upload</button>
+        
+    
+        </div>
+        <div class="form-group col-md-9">
+            <p class="heading"><strong>Instructions:</strong>
+            </p>
+            <ul>
+                <li>Provide the name of Image.</li>
+                <li>Select image via Choose Files.</li>
+                <li>Click on Upload button.</li>
+                <li>Submit the Form to store the image path in MySQL database.</li>
+            </ul>
+        </div>
+    </div>
+                        </div>
+                        
+                     </body>
+                     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+                     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js"></script>
+                     <script>
+                     
+                        //paste here your copied configuration code
+                        const firebaseConfig = {
+                           apiKey: "AIzaSyB0y3qZ6Z_i2DO8Im3eEsdJJqBmtlBEKak",
+                           authDomain: "image-upload-5c5e1.firebaseapp.com",
+                           projectId: "image-upload-5c5e1",
+                           storageBucket: "image-upload-5c5e1.appspot.com",
+                           messagingSenderId: "592449069631",
+                           appId: "1:592449069631:web:f8658fcd4c27cd7435ce8a"
+                         };
+                     
+                        // Initialize Firebase
+                        const app=initializeApp(firebaseConfig);
+                        console.log(firebase);
+                        </script>
+                    </html>
